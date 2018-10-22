@@ -92,10 +92,10 @@
         <profile>
             <id>integration-test</id>
             <properties>
-                <wildfly.home>C:\JavaDevelopment\Wildfly\wildfly-11.0.0.Final</wildfly.home>
+                <wildfly.home>/usr/local/bin/wildfly-14.0.1.Final</wildfly.home>
                 <wildfly.portoffset>30000</wildfly.portoffset>
-                <wildfly.port>36080</wildfly.port>
-                <wildfly.port2>39990</wildfly.port2>
+                <wildfly.port>8001</wildfly.port>
+                <wildfly.management.port>39990</wildfly.management.port>
             </properties>
             <build>
                 <plugins>
@@ -119,9 +119,10 @@
                     </plugin>
 
                     <plugin>
-                        <groupId>org.wildfly.plugins</groupId>
-                        <artifactId>wildfly-maven-plugin</artifactId>
-                        <version>1.0.1.Final</version>
+                            <groupId>org.wildfly.plugins</groupId>
+                            <artifactId>wildfly-maven-plugin</artifactId>
+                            <version>1.2.2.Final</version>
+
 
                         <configuration>
                             <jboss-home>${wildfly.home}</jboss-home>
@@ -130,8 +131,9 @@
                                 -Djava.net.preferIPv4Stack=true
                                 -Djboss.server.base.dir=${wildfly.home}/standalone
                                 -Djboss.socket.binding.port-offset=${wildfly.portoffset}
+                                -Djboss.http.port=${wildfly.port}
                             </jvm-args>
-                            <port>${wildfly.port2}</port>
+                            <port>${wildfly.management.port}</port>
                         </configuration>
 
                         <executions>

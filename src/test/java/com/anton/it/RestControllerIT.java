@@ -22,6 +22,7 @@ public class RestControllerIT {
     @Before
     public void before() throws Exception {
         Properties props = new Properties();
+        System.out.println("TEST");
 
         String port = System.getProperty("wildfly.remote.port");
         if (port != null) {
@@ -30,7 +31,7 @@ public class RestControllerIT {
 
         client = ClientBuilder.newClient();
 //        target = client.target("http://localhost:" + port + "/rest");
-        target = client.target("http://localhost:8080/tests/rest");
+        target = client.target("http://localhost:38001/tests/rest");
     }
 
 
