@@ -76,7 +76,7 @@
     <profiles>
 
         <profile>
-            <id>production</id>
+            <id>local</id>
             <build>
                 <plugins>
                     <plugin>
