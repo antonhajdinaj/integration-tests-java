@@ -5,4 +5,5 @@ Using the wildfly-maven-plugin (https://mvnrepository.com/artifact/org.wildfly.p
 </p>
 <h2> How to run </h2>
 mvn clean install -P integration-test // To run integration tests
+<br/>
 mvn clean install -P local // To run unit tests
